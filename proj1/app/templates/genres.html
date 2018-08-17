@@ -3,20 +3,23 @@
     <head>
         <meta charset="utf-8">
         <style>
-            ul {
+            #menu {
                 list-style: none;
             }
 
         </style>
     </head>
 {% load mptt_tags %}
-<ul>
+<ul id="menu">
     {% recursetree genres %}
         <li>
-            {{ node.name }}
+            <a href="#">{{ node.name }}</a>
             {% if not node.is_leaf_node %}
                 <ul class="children">
-                    {{ children }}
+                    <a href="#">{{ children }}</a>
+                    {% if not structure.new_level %}
+                      llsdjfldskjflsdkf
+                    {% endif %}
                 </ul>
             {% endif %}
         </li>
